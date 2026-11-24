@@ -25,6 +25,11 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+// Define global CURRENCY_SYMBOL constant from session preference
+if (!defined('CURRENCY_SYMBOL')) {
+    define('CURRENCY_SYMBOL', $_SESSION['user_currency'] ?? '$');
+}
+
 /**
  * Returns user's selected currency symbol or default '$'.
  */

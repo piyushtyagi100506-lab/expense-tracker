@@ -25,6 +25,26 @@ The system calculates real-time net cashflow, tracks monthly budgets with adapti
 
 ---
 
+## 📸 Application Preview & Screenshots
+
+| Main Dashboard | Transaction History & Live Filter |
+| :---: | :---: |
+| ![Dashboard](screenshots/01_dashboard.png) | ![Transaction History](screenshots/02_transaction_history.png) |
+
+| Expense Reports & Analytics | Savings Goals Tracker |
+| :---: | :---: |
+| ![Reports](screenshots/03_expense_reports.png) | ![Savings Goals](screenshots/04_savings_goals.png) |
+
+| Recurring Bills & Subscriptions | Category Management |
+| :---: | :---: |
+| ![Recurring Bills](screenshots/05_recurring_bills.png) | ![Categories](screenshots/06_categories.png) |
+
+| Modern Authentication & Sign In |
+| :---: |
+| ![Sign In](screenshots/07_login_page.png) |
+
+---
+
 ## 🚀 Complete Feature Suite
 
 ### 1. User Authentication & Authorization
