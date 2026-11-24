@@ -1,5 +1,7 @@
 # Personal Expense Tracker: A Web-Based Income and Expense Management System
 
+> 🌐 **Live Interactive Web Demo (GitHub Pages):** [https://piyushtyagi100506-lab.github.io/expense-tracker/](https://piyushtyagi100506-lab.github.io/expense-tracker/)
+
 A full-stack, enterprise-grade, secure web application engineered for the **Web Application Development (WAD)** course project. Built using **pure PHP 8 (PDO)**, **MySQL**, **HTML5**, **CSS3**, and **Vanilla JavaScript** (with Chart.js via CDN for interactive visualization).
 
 ---
