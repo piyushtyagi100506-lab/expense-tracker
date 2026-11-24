@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | Personal Expense Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="auth-body">
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-brand">
+                <div class="brand-icon-lg"><i class="fa-solid fa-wallet"></i></div>
+                <h2>ExpenseTracker</h2>
+                <p class="auth-subtitle">Sign in to manage your income, expenses &amp; savings goals</p>
+            </div>
+            <form onsubmit="window.location.href='../index.html'; return false;" class="auth-form">
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <div class="input-icon-wrap">
+                        <i class="fa-regular fa-envelope input-icon"></i>
+                        <input type="email" id="email" class="form-control" value="demo@example.com" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <div class="input-icon-wrap">
+                        <i class="fa-solid fa-lock input-icon"></i>
+                        <input type="password" id="password" class="form-control" value="password123" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block btn-lg"><i class="fa-solid fa-right-to-bracket"></i> <span>Sign In</span></button>
+            </form>
+            <div class="demo-box mt-4">
+                <div class="demo-header"><i class="fa-solid fa-graduation-cap"></i> <span>WAD Evaluation Quick Fill</span></div>
+                <p class="demo-desc">Pre-filled with student evaluation credentials:</p>
+                <div class="demo-creds"><code>demo@example.com</code> / <code>password123</code></div>
+                <button type="button" class="btn btn-secondary btn-sm btn-block" onclick="window.location.href='../index.html';"><i class="fa-solid fa-bolt"></i> Sign In Instantly</button>
+            </div>
+            <div class="auth-footer"><p>Viewing the live demo on GitHub Pages</p></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | ExpenseTracker - GitHub Pages Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="app-body">
+    <div class="app-layout">
+        <aside class="sidebar" id="appSidebar">
+            <div class="sidebar-brand">
+                <a href="index.html" class="brand-link">
+                    <div class="brand-icon"><i class="fa-solid fa-wallet"></i></div>
+                    <div class="brand-text">
+                        <span class="brand-title">ExpenseTracker</span>
+                        <span class="brand-subtitle">GitHub Pages Live Demo</span>
+                    </div>
+                </a>
+                <button type="button" class="sidebar-close-btn" id="sidebarClose">&times;</button>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section-label">FINANCES</div>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">
+                            <i class="fa-solid fa-gauge-high nav-icon"></i>
+                            <span class="nav-label">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/add_transaction.html" class="nav-link ">
+                            <i class="fa-solid fa-circle-plus nav-icon"></i>
+                            <span class="nav-label">Add Transaction</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/history.html" class="nav-link ">
+                            <i class="fa-solid fa-receipt nav-icon"></i>
+                            <span class="nav-label">Transaction History</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/budget.html" class="nav-link ">
+                            <i class="fa-solid fa-bullseye nav-icon"></i>
+                            <span class="nav-label">Monthly Budget</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/reports.html" class="nav-link ">
+                            <i class="fa-solid fa-chart-pie nav-icon"></i>
+                            <span class="nav-label">Expense Reports</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="nav-section-label">MANAGEMENT</div>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="pages/goals.html" class="nav-link ">
+                            <i class="fa-solid fa-piggy-bank nav-icon"></i>
+                            <span class="nav-label">Savings Goals</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/recurring.html" class="nav-link ">
+                            <i class="fa-solid fa-repeat nav-icon"></i>
+                            <span class="nav-label">Recurring Bills</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pages/categories.html" class="nav-link ">
+                            <i class="fa-solid fa-tags nav-icon"></i>
+                            <span class="nav-label">Categories</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="nav-section-label">ACCOUNT</div>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="pages/profile.html" class="nav-link ">
+                            <i class="fa-solid fa-gear nav-icon"></i>
+                            <span class="nav-label">Settings &amp; Profile</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="auth/login.html" class="nav-link logout-link">
+                            <i class="fa-solid fa-arrow-right-from-bracket nav-icon"></i>
+                            <span class="nav-label">Sign Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-user">
+                <div class="user-avatar">P</div>
+                <div class="user-meta">
+                    <div class="user-name">Piyush Tyagi</div>
+                    <div class="user-email">piyushtyagi100506-lab</div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <div class="main-wrapper">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <button type="button" class="sidebar-toggle" id="sidebarToggle"><i class="fa-solid fa-bars"></i></button>
+                    <div class="page-header-title"><h1>Dashboard</h1></div>
+                </div>
+                <div class="topbar-right">
+                    <a href="pages/add_transaction.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i> <span>Add Record</span></a>
+                    <button type="button" class="theme-toggle-btn" id="themeToggleBtn" title="Toggle Dark/Light Mode">
+                        <i class="fa-solid fa-moon" id="themeToggleIcon"></i>
+                    </button>
+                    <a href="pages/profile.html" class="user-pill">
+                        <div class="user-avatar-small">P</div>
+                        <span class="user-pill-name">Piyush Tyagi</span>
+                    </a>
+                </div>
+            </header>
+
+            <main class="content-area">
+                
+<div class="dashboard-welcome">
+    <div>
+        <h2>Welcome back, Piyush Tyagi!</h2>
+        <p class="text-muted">Here is your financial overview for <strong>November 2026</strong> (Live Interactive Demo).</p>
+    </div>
+    <div class="welcome-actions">
+        <a href="pages/add_transaction.html" class="btn btn-outline-success btn-sm"><i class="fa-solid fa-arrow-down"></i> Add Income</a>
+        <a href="pages/add_transaction.html" class="btn btn-outline-danger btn-sm"><i class="fa-solid fa-arrow-up"></i> Add Expense</a>
+        <a href="pages/budget.html" class="btn btn-secondary btn-sm"><i class="fa-solid fa-bullseye"></i> Set Budget</a>
+    </div>
+</div>
+
+<div class="metrics-grid">
+    <div class="metric-card metric-income">
+        <div class="metric-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+        <div class="metric-info">
+            <span class="metric-title">Total Income (All-Time)</span>
+            <h3 class="metric-value text-success">$10,170.00</h3>
+            <span class="metric-sub">This Month: <strong>$5,350.00</strong></span>
+        </div>
+    </div>
+    <div class="metric-card metric-expense">
+        <div class="metric-icon"><i class="fa-solid fa-arrow-trend-down"></i></div>
+        <div class="metric-info">
+            <span class="metric-title">Total Expenses (All-Time)</span>
+            <h3 class="metric-value text-danger">$3,195.19</h3>
+            <span class="metric-sub">This Month: <strong>$1,636.19</strong></span>
+        </div>
+    </div>
+    <div class="metric-card metric-balance">
+        <div class="metric-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+        <div class="metric-info">
+            <span class="metric-title">Net Available Balance</span>
+            <h3 class="metric-value text-primary">$6,974.81</h3>
+            <span class="metric-sub">Month Net: <strong class="text-success">+$3,713.81</strong></span>
+        </div>
+    </div>
+</div>
+
+<div class="card budget-card">
+    <div class="card-header flex-between">
+        <h3 class="card-title"><i class="fa-solid fa-bullseye text-teal"></i> Monthly Budget Overview &bull; November 2026</h3>
+        <a href="pages/budget.html" class="btn btn-outline-primary btn-sm">Adjust Budget</a>
+    </div>
+    <div class="card-body">
+        <div class="budget-stat-row">
+            <div class="budget-stat-item"><span class="label">Total Budget Limit</span><span class="val">$2,800.00</span></div>
+            <div class="budget-stat-item"><span class="label">Total Spent So Far</span><span class="val text-danger">$1,636.19</span></div>
+            <div class="budget-stat-item"><span class="label">Remaining Power</span><span class="val text-success">$1,163.81</span></div>
+            <div class="budget-stat-item"><span class="label">Budget Consumed</span><span class="val">58.4%</span></div>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar-track">
+                <div class="progress-bar-fill progress-success" style="width: 58.4%;"></div>
+            </div>
+        </div>
+        <div class="budget-alert alert-success-soft mt-3">
+            <i class="fa-solid fa-circle-check"></i>
+            <span><strong>Healthy Spending!</strong> You are well within your allocated budget target for this month.</span>
+        </div>
+    </div>
+</div>
+
+<div class="charts-grid">
+    <div class="card chart-card">
+        <div class="card-header"><h3 class="card-title"><i class="fa-solid fa-chart-pie text-teal"></i> Expenses by Category</h3></div>
+        <div class="card-body"><div class="chart-wrapper"><canvas id="categoryChart"></canvas></div></div>
+    </div>
+    <div class="card chart-card">
+        <div class="card-header"><h3 class="card-title"><i class="fa-solid fa-chart-column text-teal"></i> Income vs Expenses (Last 6 Months)</h3></div>
+        <div class="card-body"><div class="chart-wrapper"><canvas id="trendChart"></canvas></div></div>
+    </div>
+</div>
+
+<div class="card recent-transactions-card">
+    <div class="card-header flex-between">
+        <h3 class="card-title"><i class="fa-solid fa-clock-rotate-left text-teal"></i> Recent Transactions</h3>
+        <a href="pages/history.html" class="btn btn-outline-secondary btn-sm">View Full History <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th class="text-right">Amount</th>
+                        <th class="text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="dashboardRecentRows">
+                    <tr>
+                        <td>Nov 16, 2026</td>
+                        <td><span class="badge badge-danger"><i class="fa-solid fa-arrow-up"></i> Expense</span></td>
+                        <td><span class="category-tag">Food & Dining</span></td>
+                        <td>Casual Dinner with University Friends</td>
+                        <td class="text-right font-semibold text-danger">-$42.50</td>
+                        <td class="text-center"><button class="btn-icon text-success" onclick="showTransactionReceipt('Nov 16, 2026','expense','Food & Dining','Casual Dinner with University Friends', 42.50)"><i class="fa-solid fa-receipt"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td>Nov 15, 2026</td>
+                        <td><span class="badge badge-danger"><i class="fa-solid fa-arrow-up"></i> Expense</span></td>
+                        <td><span class="category-tag">Entertainment</span></td>
+                        <td>Cinema Tickets & Popcorn Combo</td>
+                        <td class="text-right font-semibold text-danger">-$35.00</td>
+                        <td class="text-center"><button class="btn-icon text-success" onclick="showTransactionReceipt('Nov 15, 2026','expense','Entertainment','Cinema Tickets & Popcorn Combo', 35.00)"><i class="fa-solid fa-receipt"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td>Nov 14, 2026</td>
+                        <td><span class="badge badge-danger"><i class="fa-solid fa-arrow-up"></i> Expense</span></td>
+                        <td><span class="category-tag">Shopping</span></td>
+                        <td>Ergonomic Desk Chair Cushions</td>
+                        <td class="text-right font-semibold text-danger">-$129.99</td>
+                        <td class="text-center"><button class="btn-icon text-success" onclick="showTransactionReceipt('Nov 14, 2026','expense','Shopping','Ergonomic Desk Chair Cushions', 129.99)"><i class="fa-solid fa-receipt"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td>Nov 13, 2026</td>
+                        <td><span class="badge badge-success"><i class="fa-solid fa-arrow-down"></i> Income</span></td>
+                        <td><span class="category-tag">Freelance</span></td>
+                        <td>Web Design Freelance Project</td>
+                        <td class="text-right font-semibold text-success">+$850.00</td>
+                        <td class="text-center"><button class="btn-icon text-success" onclick="showTransactionReceipt('Nov 13, 2026','income','Freelance','Web Design Freelance Project', 850.00)"><i class="fa-solid fa-receipt"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td>Nov 12, 2026</td>
+                        <td><span class="badge badge-danger"><i class="fa-solid fa-arrow-up"></i> Expense</span></td>
+                        <td><span class="category-tag">Travel & Transport</span></td>
+                        <td>Metro Transit Card Recharge</td>
+                        <td class="text-right font-semibold text-danger">-$45.00</td>
+                        <td class="text-center"><button class="btn-icon text-success" onclick="showTransactionReceipt('Nov 12, 2026','expense','Travel & Transport','Metro Transit Card Recharge', 45.00)"><i class="fa-solid fa-receipt"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+window.chartData = {
+    categories: {
+        labels: ['Housing & Rent', 'Bills & Utilities', 'Shopping', 'Food & Dining', 'Travel & Transport', 'Entertainment'],
+        values: [1100.00, 145.50, 129.99, 130.70, 45.00, 35.00]
+    },
+    trends: {
+        labels: ['Jun 2026', 'Jul 2026', 'Aug 2026', 'Sep 2026', 'Oct 2026', 'Nov 2026'],
+        incomes: [4500, 4500, 4800, 4500, 4820, 5350],
+        expenses: [1650, 1820, 1950, 1720, 1690, 1636]
+    }
+};
+</script>
+<script src="assets/js/charts.js"></script>
+
+            </main>
+
+            <footer class="app-footer">
+                <div class="footer-content">
+                    <p class="footer-text">&copy; 2026 <strong>Personal Expense Tracker</strong> &bull; Web Application Development (WAD) Course Project</p>
+                    <p class="footer-meta">GitHub Pages Interactive Client Demo &bull; Core WAD Submission: PHP 8 PDO &amp; MySQL</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Floating Action Button (FAB) -->
+    <div class="fab-container">
+        <button type="button" class="fab-main-btn" aria-label="Quick Actions">
+            <i class="fa-solid fa-plus"></i>
+        </button>
+        <div class="fab-menu">
+            <a href="pages/add_transaction.html" class="fab-item">
+                <span class="fab-item-label">Add Transaction</span>
+                <span class="fab-item-btn text-success"><i class="fa-solid fa-plus"></i></span>
+            </a>
+            <a href="pages/budget.html" class="fab-item">
+                <span class="fab-item-label">Budget Simulator</span>
+                <span class="fab-item-btn text-teal"><i class="fa-solid fa-sliders"></i></span>
+            </a>
+            <a href="pages/goals.html" class="fab-item">
+                <span class="fab-item-label">Savings Goals</span>
+                <span class="fab-item-btn text-warning"><i class="fa-solid fa-piggy-bank"></i></span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        window.CURRENCY_SYMBOL = "$";
+    </script>
+    <script src="assets/js/demo_store.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/validation.js"></script>
+    <script src="assets/js/history_filter.js"></script>
+    <script src="assets/js/budget_simulator.js"></script>
+</body>
+</html>
